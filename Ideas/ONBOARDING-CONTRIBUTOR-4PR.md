@@ -1,7 +1,7 @@
 # Contributor Onboarding Document & PR Specification
 
 **Contributor:** FLN Platform Contributor  
-**Target Milestone:** Closes #342 — Re-Scoped Dashboard Intern Tasks & UX Improvements  
+**Target Milestone:** Closes #367 — Re-Scoped Dashboard Intern Tasks & UX Improvements  
 **Document Format:** Mandatory Onboarding & PR Specification per [README.md Rules](../README.md#rules)
 
 ---
