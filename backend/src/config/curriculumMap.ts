@@ -210,3 +210,11 @@ export function getConceptForLevel(levelNumber: number): LevelConceptConfig | un
 export function getLevelForConcept(conceptId: string): LevelConceptConfig | undefined {
   return CONCEPT_TO_LEVEL[conceptId];
 }
+
+/**
+ * Check if a curriculum level number belongs to Stage 3 ("Balvatika", Age 5-6)
+ */
+export function isBalvatikaStage(level: number): boolean {
+  return CURRICULUM_MAPPING[level]?.stage === 3;
+}
+
