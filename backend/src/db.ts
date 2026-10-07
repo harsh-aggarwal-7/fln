@@ -18,7 +18,7 @@ const DB_FILE = path.resolve(DB_DIR, 'db.json');
 // Load seed competency requirements (SRS R-7). Falls back to [] if the file
 // is missing — server still boots, but eligibility decisions will be empty
 // (cert rows never transition to 'active' until seed data is restored).
-function getSeedCompetencyRequirements(): CompetencyRequirement[] {
+export function getSeedCompetencyRequirements(): CompetencyRequirement[] {
   try {
     const seedPath = path.resolve(__dirname, 'data', 'competencyRequirements.seed.json');
     const raw = readFileSync(seedPath, 'utf-8');

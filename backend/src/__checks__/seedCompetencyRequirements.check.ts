@@ -1,5 +1,5 @@
 import { strict as assert } from 'node:assert';
-import { dbStore } from '../db.js';
+import { getSeedCompetencyRequirements } from '../db.js';
 
 let passed = 0;
 let failed = 0;
@@ -18,19 +18,19 @@ function check(name: string, fn: () => void) {
 
 console.log('db — seedCompetencyRequirements ESM check');
 
-check('getSeedData().competencyRequirements returns 16 seed entries under ESM', () => {
-  const seedData = dbStore.getSeedData();
-  assert.ok(Array.isArray(seedData.competencyRequirements), 'competencyRequirements should be an array');
+check('getSeedCompetencyRequirements() returns 16 seed entries under ESM', () => {
+  const competencyRequirements = getSeedCompetencyRequirements();
+  assert.ok(Array.isArray(competencyRequirements), 'competencyRequirements should be an array');
   assert.equal(
-    seedData.competencyRequirements.length,
+    competencyRequirements.length,
     16,
-    `Expected 16 competency requirements, got ${seedData.competencyRequirements.length}`
+    `Expected 16 competency requirements, got ${competencyRequirements.length}`
   );
 });
 
 check('each competency requirement entry contains required fields', () => {
-  const seedData = dbStore.getSeedData();
-  for (const req of seedData.competencyRequirements) {
+  const competencyRequirements = getSeedCompetencyRequirements();
+  for (const req of competencyRequirements) {
     assert.ok(typeof req.classNumber === 'number', 'classNumber must be number');
     assert.ok(typeof req.level === 'number', 'level must be number');
     assert.ok(typeof req.topic === 'string', 'topic must be string');
